@@ -3,18 +3,18 @@
 echo "this will install openjdk (java whatever version you want) onto your system do you wish to continue (y/n)?"
     read var1
 ##asks you what system you are using (might try to find out how to auto detect)
-if [[ $var1 == y ]]; then
+if [[ $var1 == "y" ]]; then
     echo "are you using a debian system (ubuntu/raspian/anything that uses apt) or arch? Please type 1 for debian/apt or 2 for arch pacman"
     read var2
     echo "please note that if you areon arch, it will install the latest jdk and you can just skip the next step"
     sleep 3
     echo "what version of java do you wish to install (7|8|16|17|just a version number that exsists)"
     read javaver
-    if [[ $var2 == 1]]; then
+    if [[ $var2 == "1" ]]; then
 ##debian part
     echo "it is highly reccomended that you update your system before continuing this installation, do you wish to update (y/n)?"
     read var3
-        if [[ $var3 == y ]]; then
+        if [[ $var3 == "y" ]]; then
              echo "updating your system"
                 sudo apt update
                 sudo apt-get full-upgrade -y
@@ -34,7 +34,7 @@ if [[ $var1 == y ]]; then
     else
         echo "it is highly reccomended that you update your system before continuing this installation, do you wish to update (y/n)"
         read var3
-            if [[ $var3 == y ]]; then
+            if [[ $var3 == "y" ]]; then
                 echo "updating your system"
                     sudo pacman -Syu -y
                     echo "update complete, resuming java installation"
